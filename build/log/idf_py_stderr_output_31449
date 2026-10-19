@@ -1,0 +1,5 @@
+Command: make -j 14 all
+/home/noise/Projects/hi/main/hi.c: In function 'app_main':
+/home/noise/Projects/hi/main/hi.c:39:7: warning: variable 'gpio' set but not used [-Wunused-but-set-variable=]
+   39 |   int gpio[31] = {0};
+      |       ^~~~

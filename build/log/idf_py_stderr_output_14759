@@ -1,0 +1,10 @@
+Command: make -j 14 all
+/home/noise/Projects/hi/main/hi.c: In function 'app_main':
+/home/noise/Projects/hi/main/hi.c:50:62: error: comparison between pointer and integer [-Werror]
+   50 |       if (button_gpio[i] && (uint32_t*)REG_READ(GPIO_IN_REG) == i) {
+      |                                                              ^~
+cc1: all warnings being treated as errors
+configdep.c:684: in main: exec_process exited with error code: 1
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:79: esp-idf/main/CMakeFiles/__idf_main.dir/hi.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:9653: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2

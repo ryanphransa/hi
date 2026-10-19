@@ -25,6 +25,14 @@ void delay_ms(unsigned int ms)
   }
 }
 
+size_t expoent(size_t x) {
+  size_t result = 2;
+  while(--x)
+    result *= 2;
+
+  return result;
+}
+
 void app_main(void)
 {
   volatile uint32_t* gpio_out = (volatile uint32_t*)GPIO_OUT_REG;
@@ -32,6 +40,7 @@ void app_main(void)
 
   int button_gpio[31] = {0};
   button_gpio[4] = 1;
+  button_gpio[16] = 1;
 
   int gpio[31] = {0};
   gpio[2] = 1;
@@ -39,19 +48,25 @@ void app_main(void)
   /* Enables LED pin as output */
   // *gpio_enable = (1 << LED_PIN);
   for (size_t i = 0; i <= 31; i++) {
-    if (gpio[i]) {
+    if (gpio[i] && !button_gpio[i]) {
       *gpio_enable += (1 << i);
     }
   }
 
   while(1) {
-    /* Toggles LED pin high and low using XOR op */
-    /* if BUTTON in GPIO 4 is HIGH */
-    if (REG_READ(GPIO_IN_REG) >> 4 & 0x01) {
-      *gpio_out ^= *gpio_enable;
+    for (size_t i = 0; ; i++) {
+      if (button_gpio[i] && ((REG_READ(GPIO_IN_REG)) >> i) & 0x01) {
+        printf("gpio_on\n");
+        *gpio_out = *gpio_enable;
+        break;
+      }
+      else if (i > 31) {
+        printf("gpio_off\n");
+        *gpio_out &= ~*gpio_enable;
+        break;
+      }
     }
 
-    /* Gives delay of 1 second */
-    delay_ms(100);
+    delay_ms(10); // timer is wrong, correct it
   }
 }
