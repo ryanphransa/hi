@@ -1,0 +1,29 @@
+esp-idf/protocomm/CMakeFiles/__idf_protocomm.dir/proto-c/sec2.pb-c.c.obj: \
+ /home/noise/esp-idf/components/protocomm/proto-c/sec2.pb-c.c \
+ /home/noise/esp-idf/components/protocomm/proto-c/sec2.pb-c.h \
+ /home/noise/esp-idf/components/protobuf-c/protobuf-c/protobuf-c/protobuf-c.h \
+ /home/noise/esp-idf/components/esp_libc/platform_include/assert.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/stdlib.h \
+ /home/noise/esp-idf/components/esp_libc/platform_include/sys/cdefs.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/cdefs.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/config.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/machine/ieeefp.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/features.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/picolibc.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/machine/_default_types.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/stdint.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/16.1.0/include/stddef.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_stdint.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_intsup.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/machine/stdlib.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/alloca.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_locale.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_wait.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/assert.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/limits.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/syslimits.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/16.1.0/include/limits.h \
+ /home/noise/esp-idf/components/protocomm/proto-c/constants.pb-c.h \
+ /home/noise/Projects/hi/build/config/compiler/assert/ndebug/evaluate.cdep \
+ /home/noise/Projects/hi/build/config/compiler/optimization/assertions/silent.cdep \
+ /home/noise/Projects/hi/build/config/libc/picolibc/newlib/compatibility.cdep

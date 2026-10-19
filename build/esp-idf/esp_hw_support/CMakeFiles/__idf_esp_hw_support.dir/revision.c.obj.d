@@ -1,0 +1,26 @@
+esp-idf/esp_hw_support/CMakeFiles/__idf_esp_hw_support.dir/revision.c.obj: \
+ /home/noise/esp-idf/components/esp_hw_support/revision.c \
+ /home/noise/esp-idf/components/esp_common/include/esp_assert.h \
+ /home/noise/esp-idf/components/esp_libc/platform_include/assert.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/stdlib.h \
+ /home/noise/esp-idf/components/esp_libc/platform_include/sys/cdefs.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/cdefs.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/config.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/machine/ieeefp.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/features.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/picolibc.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/machine/_default_types.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/stdint.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/16.1.0/include/stddef.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_stdint.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_intsup.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/machine/stdlib.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/alloca.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_locale.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_wait.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/assert.h \
+ /home/noise/Projects/hi/build/config/esp/rev/min/full.cdep \
+ /home/noise/Projects/hi/build/config/esp/rev/max/full.cdep \
+ /home/noise/Projects/hi/build/config/compiler/assert/ndebug/evaluate.cdep \
+ /home/noise/Projects/hi/build/config/compiler/optimization/assertions/silent.cdep \
+ /home/noise/Projects/hi/build/config/libc/picolibc/newlib/compatibility.cdep

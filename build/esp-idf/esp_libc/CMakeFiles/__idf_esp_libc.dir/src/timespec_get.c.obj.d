@@ -1,0 +1,26 @@
+esp-idf/esp_libc/CMakeFiles/__idf_esp_libc.dir/src/timespec_get.c.obj: \
+ /home/noise/esp-idf/components/esp_libc/src/timespec_get.c \
+ /home/noise/esp-idf/components/esp_libc/platform_include/time.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/types.h \
+ /home/noise/esp-idf/components/esp_libc/platform_include/sys/cdefs.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/cdefs.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/config.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/machine/ieeefp.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/features.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/picolibc.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/machine/_default_types.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/stdint.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/16.1.0/include/stddef.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_stdint.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_intsup.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/machine/_types.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_types.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/machine/endian.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/machine/_endian.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_pthreadtypes.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/sched.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_timespec.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/machine/types.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/time.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_locale.h \
+ /home/noise/Projects/hi/build/config/libc/picolibc/newlib/compatibility.cdep

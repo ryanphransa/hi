@@ -1,0 +1,2 @@
+xtensa-esp32-elf-gcc-ar qc libesp_hal_cache.a CMakeFiles/__idf_esp_hal_cache.dir/esp32/cache_hal_esp32.c.obj CMakeFiles/__idf_esp_hal_cache.dir/mmu_hal.c.obj
+xtensa-esp32-elf-gcc-ranlib libesp_hal_cache.a

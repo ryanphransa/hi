@@ -1,0 +1,19 @@
+esp-idf/esp_stdio/CMakeFiles/__idf_esp_stdio.dir/stdio_simple.c.obj: \
+ /home/noise/esp-idf/components/esp_stdio/stdio_simple.c \
+ /home/noise/esp-idf/components/esp_stdio/include/esp_system_console.h \
+ /home/noise/esp-idf/components/esp_rom/include/esp_rom_serial_output.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/stdint.h \
+ /home/noise/esp-idf/components/esp_libc/platform_include/sys/cdefs.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/cdefs.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/config.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/machine/ieeefp.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/features.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/picolibc.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/machine/_default_types.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/16.1.0/include/stddef.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_stdint.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_intsup.h \
+ /home/noise/esp-idf/components/esp_rom/include/esp_rom_usb_serial.h \
+ /home/noise/esp-idf/components/esp_rom/esp32/esp_rom_caps.h \
+ /home/noise/Projects/hi/build/config/esp/console/secondary/usb/serial/jtag.cdep \
+ /home/noise/Projects/hi/build/config/libc/picolibc/newlib/compatibility.cdep

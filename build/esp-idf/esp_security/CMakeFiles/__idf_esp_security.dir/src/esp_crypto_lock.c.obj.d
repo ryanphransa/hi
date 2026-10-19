@@ -1,0 +1,23 @@
+esp-idf/esp_security/CMakeFiles/__idf_esp_security.dir/src/esp_crypto_lock.c.obj: \
+ /home/noise/esp-idf/components/esp_security/src/esp_crypto_lock.c \
+ /home/noise/esp-idf/components/esp_libc/platform_include/sys/lock.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/lock.h \
+ /home/noise/esp-idf/components/esp_libc/platform_include/sys/cdefs.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/cdefs.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/config.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/machine/ieeefp.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/features.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/picolibc.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/machine/_default_types.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/stdint.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/lib/gcc/xtensa-esp-elf/16.1.0/include/stddef.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_stdint.h \
+ /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/picolibc/include/sys/_intsup.h \
+ /home/noise/esp-idf/components/esp_security/include/esp_crypto_lock.h \
+ /home/noise/esp-idf/components/soc/esp32/include/soc/soc_caps.h \
+ /home/noise/esp-idf/components/soc/include/soc/soc_caps_eval.h \
+ /home/noise/Projects/hi/build/config/libc/picolibc.cdep \
+ /home/noise/Projects/hi/build/config/freertos/use/list/data/integrity/check/bytes.cdep \
+ /home/noise/Projects/hi/build/config/freertos/use/trace/facility.cdep \
+ /home/noise/Projects/hi/build/config/libc/picolibc/newlib/compatibility.cdep \
+ /home/noise/Projects/hi/build/config/esp32/rev/min/full.cdep
