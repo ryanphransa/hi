@@ -76,15 +76,15 @@ esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj: e
 esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj: /home/noise/esp-idf/components/esp_app_format/esp_app_desc.c
 esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj: esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/noise/Projects/hi/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj"
-	cd /home/noise/Projects/hi/build/esp-idf/esp_app_format && esp-idf-configdep /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) -D PROJECT_NAME=\"hi\" -DPROJECT_VER=\"1\" $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj -MF CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj.d -o CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj -c /home/noise/esp-idf/components/esp_app_format/esp_app_desc.c
+	cd /home/noise/Projects/hi/build/esp-idf/esp_app_format && esp-idf-configdep /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) -D PROJECT_NAME=\"hi\" -DPROJECT_VER=\"1e92a33-dirty\" $(C_INCLUDES) $(C_FLAGS) -MD -MT esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj -MF CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj.d -o CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.obj -c /home/noise/esp-idf/components/esp_app_format/esp_app_desc.c
 
 esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.i"
-	cd /home/noise/Projects/hi/build/esp-idf/esp_app_format && /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) -D PROJECT_NAME=\"hi\" -DPROJECT_VER=\"1\" $(C_INCLUDES) $(C_FLAGS) -E /home/noise/esp-idf/components/esp_app_format/esp_app_desc.c > CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.i
+	cd /home/noise/Projects/hi/build/esp-idf/esp_app_format && /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) -D PROJECT_NAME=\"hi\" -DPROJECT_VER=\"1e92a33-dirty\" $(C_INCLUDES) $(C_FLAGS) -E /home/noise/esp-idf/components/esp_app_format/esp_app_desc.c > CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.i
 
 esp-idf/esp_app_format/CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.s"
-	cd /home/noise/Projects/hi/build/esp-idf/esp_app_format && /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) -D PROJECT_NAME=\"hi\" -DPROJECT_VER=\"1\" $(C_INCLUDES) $(C_FLAGS) -S /home/noise/esp-idf/components/esp_app_format/esp_app_desc.c -o CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.s
+	cd /home/noise/Projects/hi/build/esp-idf/esp_app_format && /home/noise/.espressif/tools/xtensa-esp-elf/esp-16.1.0_20260609/xtensa-esp-elf/bin/xtensa-esp32-elf-gcc $(C_DEFINES) -D PROJECT_NAME=\"hi\" -DPROJECT_VER=\"1e92a33-dirty\" $(C_INCLUDES) $(C_FLAGS) -S /home/noise/esp-idf/components/esp_app_format/esp_app_desc.c -o CMakeFiles/__idf_esp_app_format.dir/esp_app_desc.c.s
 
 # Object files for target __idf_esp_app_format
 __idf_esp_app_format_OBJECTS = \

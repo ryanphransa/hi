@@ -1,0 +1,5 @@
+Command: make -j 14 all
+/home/noise/Projects/hi/main/hi.c: In function 'app_main':
+/home/noise/Projects/hi/main/hi.c:47:22: warning: unused variable 'dac_freq' [-Wunused-variable]
+   47 |   volatile uint32_t* dac_freq = (volatile uint32_t*)SENS_SAR_DAC_CTRL1_REG;
+      |                      ^~~~~~~~

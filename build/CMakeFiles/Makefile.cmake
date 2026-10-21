@@ -7,6 +7,8 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 # The top level Makefile was generated from the following files:
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
+  "/home/noise/Projects/hi/.git/HEAD"
+  "/home/noise/Projects/hi/.git/refs/heads/main"
   "/home/noise/Projects/hi/CMakeLists.txt"
   "CMakeFiles/4.2.2/CMakeASMCompiler.cmake"
   "CMakeFiles/4.2.2/CMakeCCompiler.cmake"
@@ -371,6 +373,9 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "CMakeFiles/git-data/HEAD"
+  "CMakeFiles/git-data/grabRef.cmake"
+  "CMakeFiles/git-data/head-ref"
   "CMakeFiles/git-data/HEAD"
   "CMakeFiles/git-data/grabRef.cmake"
   "CMakeFiles/git-data/head-ref"

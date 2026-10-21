@@ -899,54 +899,6 @@ system_time.c.s:
 	cd /home/noise/Projects/hi/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/system_time.c.s
 .PHONY : system_time.c.s
 
-task_wdt/task_wdt.obj: task_wdt/task_wdt.c.obj
-.PHONY : task_wdt/task_wdt.obj
-
-# target to build an object file
-task_wdt/task_wdt.c.obj:
-	cd /home/noise/Projects/hi/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/task_wdt/task_wdt.c.obj
-.PHONY : task_wdt/task_wdt.c.obj
-
-task_wdt/task_wdt.i: task_wdt/task_wdt.c.i
-.PHONY : task_wdt/task_wdt.i
-
-# target to preprocess a source file
-task_wdt/task_wdt.c.i:
-	cd /home/noise/Projects/hi/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/task_wdt/task_wdt.c.i
-.PHONY : task_wdt/task_wdt.c.i
-
-task_wdt/task_wdt.s: task_wdt/task_wdt.c.s
-.PHONY : task_wdt/task_wdt.s
-
-# target to generate assembly for a file
-task_wdt/task_wdt.c.s:
-	cd /home/noise/Projects/hi/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/task_wdt/task_wdt.c.s
-.PHONY : task_wdt/task_wdt.c.s
-
-task_wdt/task_wdt_impl_timergroup.obj: task_wdt/task_wdt_impl_timergroup.c.obj
-.PHONY : task_wdt/task_wdt_impl_timergroup.obj
-
-# target to build an object file
-task_wdt/task_wdt_impl_timergroup.c.obj:
-	cd /home/noise/Projects/hi/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/task_wdt/task_wdt_impl_timergroup.c.obj
-.PHONY : task_wdt/task_wdt_impl_timergroup.c.obj
-
-task_wdt/task_wdt_impl_timergroup.i: task_wdt/task_wdt_impl_timergroup.c.i
-.PHONY : task_wdt/task_wdt_impl_timergroup.i
-
-# target to preprocess a source file
-task_wdt/task_wdt_impl_timergroup.c.i:
-	cd /home/noise/Projects/hi/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/task_wdt/task_wdt_impl_timergroup.c.i
-.PHONY : task_wdt/task_wdt_impl_timergroup.c.i
-
-task_wdt/task_wdt_impl_timergroup.s: task_wdt/task_wdt_impl_timergroup.c.s
-.PHONY : task_wdt/task_wdt_impl_timergroup.s
-
-# target to generate assembly for a file
-task_wdt/task_wdt_impl_timergroup.c.s:
-	cd /home/noise/Projects/hi/build && $(MAKE) $(MAKESILENT) -f esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/build.make esp-idf/esp_system/CMakeFiles/__idf_esp_system.dir/task_wdt/task_wdt_impl_timergroup.c.s
-.PHONY : task_wdt/task_wdt_impl_timergroup.c.s
-
 ubsan.obj: ubsan.c.obj
 .PHONY : ubsan.obj
 
@@ -1073,12 +1025,6 @@ help:
 	@echo "... system_time.obj"
 	@echo "... system_time.i"
 	@echo "... system_time.s"
-	@echo "... task_wdt/task_wdt.obj"
-	@echo "... task_wdt/task_wdt.i"
-	@echo "... task_wdt/task_wdt.s"
-	@echo "... task_wdt/task_wdt_impl_timergroup.obj"
-	@echo "... task_wdt/task_wdt_impl_timergroup.i"
-	@echo "... task_wdt/task_wdt_impl_timergroup.s"
 	@echo "... ubsan.obj"
 	@echo "... ubsan.i"
 	@echo "... ubsan.s"
