@@ -22,8 +22,6 @@
 
 #define REG_READ(reg) (*(volatile uint32_t *)(reg))
 
-// #define LED_PIN 2
-
 /*
    This projects depends of turning off
    watchdog verify interval
@@ -58,8 +56,10 @@ void app_main(void)
   *dac_power_on += 0 << 12; // SLP_OE OFF
   *dac_power_on += 0 << 13; // SLP_IE OFF
 
-  *dac_freq = (1 << 16);
-  *dac_freq += (1 << 3);
+  *dac_freq = (1 << 16); // SENS_SW_FSTEP Frequency step for CW generator;
+                         // can be used to adjust the frequency.
+
+  *dac_freq += (1 << 3); // define freq
 
   int button_gpio[31] = {0};
   button_gpio[4] = 1;
@@ -72,7 +72,6 @@ void app_main(void)
   gpio[25] = 1;
 
   /* Enables LED pin as output */
-  // *gpio_enable = (1 << LED_PIN);
   for (size_t i = 0; i <= 31; i++) {
     if (gpio[i] && !button_gpio[i]) {
       *gpio_enable += (1 << i);
@@ -85,6 +84,14 @@ void app_main(void)
         //printf("gpio_on\n");
         *gpio_out = *gpio_enable;
         *dac_power_on = (1 << 10) + (1 << 18);  // dac power on
+        if (i == 4)
+          *dac_freq = (1 << 4) + (1 << 16);
+        else if (i == 16)
+          *dac_freq = (1 << 3) + (1 << 16);
+        else if (i == 17)
+          *dac_freq = (1 << 2) + (1 << 16);
+        else if (i == 5)
+          *dac_freq = (1 << 1) + (1 << 16);
         break;
       }
       else if (i > 31) {
