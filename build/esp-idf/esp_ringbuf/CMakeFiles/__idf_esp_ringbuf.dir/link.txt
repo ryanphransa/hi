@@ -1,2 +1,0 @@
-xtensa-esp32-elf-gcc-ar qc libesp_ringbuf.a CMakeFiles/__idf_esp_ringbuf.dir/ringbuf.c.obj
-xtensa-esp32-elf-gcc-ranlib libesp_ringbuf.a

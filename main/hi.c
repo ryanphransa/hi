@@ -1,41 +1,76 @@
-#include <stdio.h>
-#include <stdint.h>
-
-#define GPIO_OUT_REG    0x3FF44004 /* output GPIO 0-31 value */
-
-#define GPIO_ENABLE_REG 0x3FF44020 /* verify if a GPIO is enabled
-                                    * or enable it
-                                    */
-
-#define GPIO_IN_REG     0x3FF4403C /* verify if GPIO has input
-                                    * using REG_READ
-                                    */
-#define SENS_SAR_DAC_CTRL1_REG 0x3FF48898
-#define SENS_SAR_DAC_CTRL2_REG 0x3FF4889C
-/*
- * Adjust frequency of CW with SENS_SAR_SW_FSTEP [15:0]
- * freq = dig_clk_rtc_freq * SENS_SAR_SW_FSTEP / 65536
- * the frequency of dig_clk_rtc is typically 8MHz
- */
-#define RTCIO_PAD_DAC1_REG 0x3FF48484
-#define RTCIO_PAD_DAC2_REG 0x3FF48488
-
-#define REG_READ(reg) (*(volatile uint32_t *)(reg))
-
 /*
    This projects depends of turning off
    watchdog verify interval
 */
+#include <stdint.h>
 
-void delay_ms(unsigned int ms)
-{
-  while(ms--) {
-    for(int count = 0; count < 24000; count++) {
-      /* Assembly code for giving a free cpu cycle
-        to create a delay, nop -> NO OPERATION */
-      __asm__ volatile ("nop");
-    }
+/* Definicao dos registradores */
+#define GPIO_OUT_REG    0x3FF44004 // Altera o estado dos GPIOs para 1 ou 0
+#define GPIO_ENABLE_REG 0x3FF44020 // Define os GPIOs para saida
+#define GPIO_IN_REG     0x3FF4403C // Le as entradas dos GPIOs
+#define SENS_SAR_DAC_CTRL1_REG 0x3FF48898 // Registrador de configuracao (DAC control)
+#define SENS_SAR_DAC_CTRL2_REG 0x3FF4889C // Registrador de configuracao (DAC output control)
+#define RTCIO_PAD_DAC1_REG 0x3FF48484 // Registrador de configuracao
+
+/* Definicao dos registrador de configuracao */
+// SENS_SAR_DAC_CTRL1_REG:
+#define SENS_SW_TONE_EN (1u << 16)
+// RTCIO_PAD_DAC1_REG
+#define RTCIO_PAD_PDAC1_XPD_DAC (1u << 18) /* Liga DAC1 */
+#define RTCIO_PAD_PDAC1_DAC_XPD_FORCE (1u << 10) /* Forca DAC1 */
+
+/* Frequencias */
+#define NOTA_MUSICAL_R 2
+#define NOTA_MUSICAL_Y 4
+#define NOTA_MUSICAL_A 6
+#define NOTA_MUSICAL_N 8
+
+#define NOTA_MUSICAL_P 10
+#define NOTA_MUSICAL_E 12
+
+#define REG_READ(reg) (*(volatile uint32_t *)(reg))
+
+int estado_interruptor = 0; /* frequency divider state (on or off) */
+
+void definir_gpio_saida(volatile uint32_t* gpio_enable, uint32_t val) {
+  *gpio_enable |= (1 << val);
+}
+
+void ligar_gpio_saida(volatile uint32_t* gpio_enable, volatile uint32_t* gpio_out) {
+  *gpio_enable &= ~(1 << 25);
+  *gpio_out &= ~(1 << 25);
+  *gpio_out |= *gpio_enable;
+}
+
+int ler_gpio_entrada(int gpio_entrada) {
+  if (gpio_entrada > 0)
+    return ((REG_READ(GPIO_IN_REG)) >> gpio_entrada) & 0x01;
+  else
+    return 0;
+}
+
+void ligar_dac1(volatile uint32_t* dac1_config) {
+  // Escrevendo no registrador:
+  *dac1_config |= RTCIO_PAD_PDAC1_XPD_DAC;
+  *dac1_config |= RTCIO_PAD_PDAC1_DAC_XPD_FORCE;
+}
+
+void interruptor(volatile uint32_t* dac_freq, int leitura_interruptor, int estado_interruptor, int nota_atual) {
+  if (leitura_interruptor && !estado_interruptor) {
+    *dac_freq = nota_atual/2  + SENS_SW_TONE_EN;
+    estado_interruptor = 1;
   }
+  else if (leitura_interruptor && estado_interruptor){
+    estado_interruptor = 0;
+  }
+}
+
+void desligar_gpio_saida(volatile uint32_t* gpio_enable, volatile uint32_t* gpio_out) {
+  *gpio_out &= ~*gpio_enable;
+}
+
+void desligar_dac1(volatile uint32_t* dac1_config) {
+  *dac1_config = 0;
 }
 
 void app_main(void)
@@ -43,65 +78,63 @@ void app_main(void)
   volatile uint32_t* gpio_out = (volatile uint32_t*)GPIO_OUT_REG;
   volatile uint32_t* gpio_enable = (volatile uint32_t*)GPIO_ENABLE_REG;
   volatile uint32_t* dac_freq = (volatile uint32_t*)SENS_SAR_DAC_CTRL1_REG;
-  volatile uint32_t* dac_power_on = (volatile uint32_t*)RTCIO_PAD_DAC1_REG;
-  volatile uint32_t* dac_cw = (volatile uint32_t*)SENS_SAR_DAC_CTRL2_REG;
+  volatile uint32_t* dac1_config = (volatile uint32_t*)RTCIO_PAD_DAC1_REG;
 
-  *dac_cw = 1 << 24;
+  /* GPIOs que estao os botoes */
+  uint32_t botao_gpio[31] = { 4, 16, 17, 5, 18, 19 };
+  uint32_t interruptor_gpio[31] = { 21 };
 
-  //*dac_power_on = (1 << 10) + (1 << 18);  // dac power on
-  /* tristate now */
-  *dac_power_on += 0 << 27; // RUE OFF
-  *dac_power_on += 0 << 28; // RDE OFF
-  *dac_power_on += 0 << 11; // FUN_IE OFF
-  *dac_power_on += 0 << 12; // SLP_OE OFF
-  *dac_power_on += 0 << 13; // SLP_IE OFF
+  /* GPIOs que serao configurados como output */
+  uint32_t gpio[31] = { 2 }; // LED
 
-  *dac_freq = (1 << 16); // SENS_SW_FSTEP Frequency step for CW generator;
-                         // can be used to adjust the frequency.
+  definir_gpio_saida(gpio_enable, gpio[0]);
 
-  *dac_freq += (1 << 3); // define freq
-
-  int button_gpio[31] = {0};
-  button_gpio[4] = 1;
-  button_gpio[16] = 1;
-  button_gpio[17] = 1;
-  button_gpio[5] = 1;
-
-  int gpio[31] = {0};
-  gpio[2] = 1;
-  gpio[25] = 1;
-
-  /* Enables LED pin as output */
-  for (size_t i = 0; i <= 31; i++) {
-    if (gpio[i] && !button_gpio[i]) {
-      *gpio_enable += (1 << i);
-    }
-  }
-
+  int nota_atual = 0;
   while(1) {
-    for (size_t i = 0; ; i++) {
-      if (button_gpio[i] && ((REG_READ(GPIO_IN_REG)) >> i) & 0x01) {
-        //printf("gpio_on\n");
-        *gpio_out = *gpio_enable;
-        *dac_power_on = (1 << 10) + (1 << 18);  // dac power on
-        if (i == 4)
-          *dac_freq = (1 << 4) + (1 << 16);
-        else if (i == 16)
-          *dac_freq = (1 << 3) + (1 << 16);
-        else if (i == 17)
-          *dac_freq = (1 << 2) + (1 << 16);
-        else if (i == 5)
-          *dac_freq = (1 << 1) + (1 << 16);
-        break;
+    for (int i = 0; ; i++) {
+      if (botao_gpio[i] > 0 && ler_gpio_entrada(botao_gpio[i]) && botao_gpio[i] != 21) {
+        uint32_t gpio_entrada = botao_gpio[i];
+
+        // Liga os GPIOs configurados no gpio_enable
+        ligar_gpio_saida(gpio_enable, gpio_out);
+
+        // Liga o DAC1 (GPIO 25), que eh a saida de som
+        ligar_dac1(dac1_config);
+
+        /* Definindo frequencia da onda a partir do botao pressionado */
+        if (gpio_entrada == 4) {
+          *dac_freq = NOTA_MUSICAL_R + SENS_SW_TONE_EN;
+          nota_atual = NOTA_MUSICAL_R;
+        }
+        else if (gpio_entrada == 16) {
+          *dac_freq = NOTA_MUSICAL_Y + SENS_SW_TONE_EN;
+          nota_atual = NOTA_MUSICAL_Y;
+        }
+        else if (gpio_entrada == 17) {
+          *dac_freq = NOTA_MUSICAL_A + SENS_SW_TONE_EN;
+          nota_atual = NOTA_MUSICAL_A;
+        }
+        else if (gpio_entrada == 5) {
+          *dac_freq = NOTA_MUSICAL_N + SENS_SW_TONE_EN;
+          nota_atual = NOTA_MUSICAL_N;
+        }
+        else if (gpio_entrada == 18) {
+          *dac_freq = NOTA_MUSICAL_P + SENS_SW_TONE_EN;
+          nota_atual = NOTA_MUSICAL_P;
+        }
+        else if (gpio_entrada == 19) {
+          *dac_freq = NOTA_MUSICAL_E + SENS_SW_TONE_EN;
+          nota_atual = NOTA_MUSICAL_E;
+        }
       }
       else if (i > 31) {
-        //printf("gpio_off\n");
-        *gpio_out &= ~*gpio_enable;
-        *dac_power_on = (0 << 10) + (0 << 18);  // dac power off
+        desligar_gpio_saida(gpio_enable, gpio_out);
+        desligar_dac1(dac1_config);
+
         break;
       }
-    }
 
-    delay_ms(10); // timer is wrong, correct it
+      interruptor(dac_freq, ler_gpio_entrada(interruptor_gpio[0]), estado_interruptor, nota_atual);
+    }
   }
 }
